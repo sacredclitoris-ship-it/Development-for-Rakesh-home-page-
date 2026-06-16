@@ -1,0 +1,626 @@
+<!-- BJ Loan Services - Home Page Demo -->
+<!-- Save as index.html and open in your browser -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>BJ Loan Services</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Poppins',sans-serif;
+}
+
+body{
+    background:#f8f8f8;
+    color:#222;
+}
+
+/* HEADER */
+
+header{
+    background:white;
+    position:sticky;
+    top:0;
+    z-index:1000;
+    box-shadow:0 2px 15px rgba(0,0,0,0.08);
+}
+
+.container{
+    width:90%;
+    max-width:1400px;
+    margin:auto;
+}
+
+.navbar{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:20px 0;
+}
+
+.logo{
+    display:flex;
+    align-items:center;
+    gap:15px;
+}
+
+.logo img{
+    width:80px;
+}
+
+.logo-text h2{
+    color:#e00012;
+    font-size:30px;
+}
+
+.logo-text span{
+    color:#666;
+    font-size:13px;
+}
+
+nav ul{
+    display:flex;
+    list-style:none;
+    gap:35px;
+}
+
+nav a{
+    text-decoration:none;
+    color:#333;
+    font-weight:500;
+    transition:.3s;
+}
+
+nav a:hover{
+    color:#e00012;
+}
+
+.login-btn{
+    background:#e00012;
+    color:white;
+    border:none;
+    padding:12px 30px;
+    border-radius:8px;
+    cursor:pointer;
+    font-weight:600;
+    transition:.3s;
+}
+
+.login-btn:hover{
+    transform:translateY(-3px);
+}
+
+/* HERO */
+
+.hero{
+    position:relative;
+    overflow:hidden;
+    background:white;
+}
+
+.hero::before{
+    content:'';
+    position:absolute;
+    top:-250px;
+    left:-150px;
+    width:500px;
+    height:500px;
+    background:#e00012;
+    border-radius:50%;
+}
+
+.hero::after{
+    content:'';
+    position:absolute;
+    bottom:-250px;
+    right:-150px;
+    width:500px;
+    height:500px;
+    background:#e00012;
+    border-radius:50%;
+}
+
+.hero-content{
+    position:relative;
+    z-index:2;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:80px 0;
+}
+
+.hero-text{
+    width:50%;
+}
+
+.hero-text h1{
+    font-size:58px;
+    line-height:1.2;
+}
+
+.hero-text h1 span{
+    color:#e00012;
+}
+
+.hero-text p{
+    color:#666;
+    margin:25px 0;
+    font-size:18px;
+}
+
+.hero-buttons{
+    display:flex;
+    gap:20px;
+}
+
+.primary-btn{
+    background:#e00012;
+    color:white;
+    border:none;
+    padding:15px 35px;
+    border-radius:10px;
+    cursor:pointer;
+    font-size:16px;
+}
+
+.secondary-btn{
+    background:white;
+    border:2px solid #e00012;
+    color:#e00012;
+    padding:15px 35px;
+    border-radius:10px;
+    cursor:pointer;
+}
+
+.hero-image{
+    width:40%;
+}
+
+.hero-image img{
+    width:100%;
+}
+
+/* SERVICES */
+
+.section{
+    padding:80px 0;
+}
+
+.section-title{
+    text-align:center;
+    margin-bottom:50px;
+}
+
+.section-title h2{
+    font-size:40px;
+}
+
+.section-title p{
+    color:#666;
+}
+
+.cards{
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    gap:30px;
+}
+
+.card{
+    background:white;
+    padding:35px;
+    border-radius:20px;
+    text-align:center;
+    box-shadow:0 5px 20px rgba(0,0,0,0.08);
+    transition:.3s;
+}
+
+.card:hover{
+    transform:translateY(-10px);
+}
+
+.card-icon{
+    font-size:45px;
+    margin-bottom:15px;
+}
+
+.card h3{
+    margin-bottom:10px;
+}
+
+.card p{
+    color:#666;
+}
+
+/* DASHBOARD */
+
+.dashboard{
+    background:white;
+}
+
+.stats{
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    gap:25px;
+}
+
+.stat-box{
+    background:#fff;
+    border-left:5px solid #e00012;
+    padding:30px;
+    border-radius:15px;
+    box-shadow:0 5px 20px rgba(0,0,0,0.08);
+}
+
+.stat-box h2{
+    color:#e00012;
+    margin-top:10px;
+}
+
+/* SUPPORT */
+
+.support{
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    gap:60px;
+}
+
+.support-text{
+    width:50%;
+}
+
+.support-text h2{
+    font-size:42px;
+}
+
+.support-text p{
+    margin:20px 0;
+    color:#666;
+}
+
+.support-info{
+    line-height:2;
+}
+
+.support-image{
+    width:40%;
+}
+
+.support-image img{
+    width:100%;
+}
+
+/* PARTNERS */
+
+.partners{
+    display:flex;
+    justify-content:space-between;
+    gap:20px;
+}
+
+.partner{
+    flex:1;
+    background:white;
+    padding:30px;
+    text-align:center;
+    border-radius:15px;
+    box-shadow:0 5px 20px rgba(0,0,0,0.08);
+    font-weight:700;
+    color:#555;
+}
+
+/* FOOTER */
+
+footer{
+    background:#e00012;
+    color:white;
+    margin-top:80px;
+}
+
+.footer-grid{
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    gap:40px;
+    padding:60px 0;
+}
+
+footer ul{
+    list-style:none;
+}
+
+footer li{
+    margin:12px 0;
+}
+
+footer a{
+    color:white;
+    text-decoration:none;
+}
+
+.copyright{
+    text-align:center;
+    padding:20px;
+    border-top:1px solid rgba(255,255,255,.2);
+}
+
+@media(max-width:1024px){
+
+.hero-content,
+.support{
+    flex-direction:column;
+}
+
+.hero-text,
+.hero-image,
+.support-text,
+.support-image{
+    width:100%;
+}
+
+.cards,
+.stats,
+.footer-grid{
+    grid-template-columns:repeat(2,1fr);
+}
+
+.partners{
+    flex-wrap:wrap;
+}
+
+nav{
+    display:none;
+}
+}
+</style>
+</head>
+
+<body>
+
+<header>
+<div class="container navbar">
+
+<div class="logo">
+<img src="1000054126.png" alt="BJ Logo">
+
+<div class="logo-text">
+<h2>BJ Loan Services</h2>
+<span>Your Loan, Our Commitment</span>
+</div>
+</div>
+
+<nav>
+<ul>
+<li><a href="#">Home</a></li>
+<li><a href="#">Loans</a></li>
+<li><a href="#">Payments</a></li>
+<li><a href="#">Documents</a></li>
+<li><a href="#">Support</a></li>
+<li><a href="#">Contact</a></li>
+</ul>
+</nav>
+
+<button class="login-btn">Login</button>
+
+</div>
+</header>
+
+<section class="hero">
+
+<div class="container hero-content">
+
+<div class="hero-text">
+
+<h1>
+Loans Made
+<span>Simple & Secure</span>
+</h1>
+
+<p>
+Fast approvals, transparent processes, and financial solutions designed around your needs.
+</p>
+
+<div class="hero-buttons">
+<button class="primary-btn">Apply Now</button>
+<button class="secondary-btn">Explore Loans</button>
+</div>
+
+</div>
+
+<div class="hero-image">
+<img src="https://images.unsplash.com/photo-1560518883-ce09059eeffa?w=900" alt="">
+</div>
+
+</div>
+
+</section>
+
+<section class="section">
+
+<div class="container">
+
+<div class="section-title">
+<h2>Our Loan Solutions</h2>
+<p>Flexible financial products for every stage of life.</p>
+</div>
+
+<div class="cards">
+
+<div class="card">
+<div class="card-icon">🏠</div>
+<h3>Home Loan</h3>
+<p>Make your dream home a reality.</p>
+</div>
+
+<div class="card">
+<div class="card-icon">👤</div>
+<h3>Personal Loan</h3>
+<p>Quick funds for your personal goals.</p>
+</div>
+
+<div class="card">
+<div class="card-icon">🚗</div>
+<h3>Vehicle Loan</h3>
+<p>Drive home your dream vehicle.</p>
+</div>
+
+<div class="card">
+<div class="card-icon">💼</div>
+<h3>Business Loan</h3>
+<p>Grow your business with confidence.</p>
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+<section class="section dashboard">
+
+<div class="container">
+
+<div class="section-title">
+<h2>Dashboard Preview</h2>
+<p>Simple insights into your loan journey.</p>
+</div>
+
+<div class="stats">
+
+<div class="stat-box">
+<p>Active Loans</p>
+<h2>03</h2>
+</div>
+
+<div class="stat-box">
+<p>Outstanding Balance</p>
+<h2>₹2.45L</h2>
+</div>
+
+<div class="stat-box">
+<p>Next EMI Due</p>
+<h2>₹12,450</h2>
+</div>
+
+<div class="stat-box">
+<p>Documents Pending</p>
+<h2>02</h2>
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+<section class="section">
+
+<div class="container support">
+
+<div class="support-text">
+
+<h2>Dedicated Support Team</h2>
+
+<p>
+Our specialists are always ready to assist you with applications, payments, and account queries.
+</p>
+
+<div class="support-info">
+📞 +918274005703<br>
+✉ Rakesh@bjloanservices.demo<br>
+🕘 Mon – Sat | 9:00 AM – 6:00 PM
+</div>
+
+<br>
+
+<button class="primary-btn">
+Contact Support
+</button>
+
+</div>
+
+<div class="support-image">
+<img src="https://cdn-icons-png.flaticon.com/512/4712/4712035.png" alt="">
+</div>
+
+</div>
+
+</section>
+
+<section class="section">
+
+<div class="container">
+
+<div class="section-title">
+<h2>Trusted Lending Partners</h2>
+</div>
+
+<div class="partners">
+
+<div class="partner">HDFC BANK</div>
+<div class="partner">ICICI BANK</div>
+<div class="partner">AXIS BANK</div>
+<div class="partner">SBI</div>
+
+</div>
+
+</div>
+
+</section>
+
+<footer>
+
+<div class="container footer-grid">
+
+<div>
+<h3>BJ Loan Services</h3>
+<br>
+<p>Your trusted financial partner delivering modern lending experiences.</p>
+</div>
+
+<div>
+<h3>Quick Links</h3>
+<ul>
+<li><a href="#">Home</a></li>
+<li><a href="#">Loans</a></li>
+<li><a href="#">Payments</a></li>
+</ul>
+</div>
+
+<div>
+<h3>Resources</h3>
+<ul>
+<li><a href="#">FAQs</a></li>
+<li><a href="#">Privacy Policy</a></li>
+<li><a href="#">Terms</a></li>
+</ul>
+</div>
+
+<div>
+<h3>Contact</h3>
+<ul>
+<li>+918274005703</li>
+<li>rakesh@bjloanservices.demo</li>
+<li>New Delhi, India</li>
+</ul>
+</div>
+
+</div>
+
+<div class="copyright">
+© 2026 BJ Loan Services. All Rights Reserved.
+</div>
+
+</footer>
+
+</body>
+</html>
+
+
